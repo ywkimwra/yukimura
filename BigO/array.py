@@ -76,18 +76,37 @@
 #         break
 # print(id)
 
+# n = int(input())
+# max_tao = 0
+# max_cam = 0
+# index = -1
+# for i in range(n):
+#     tao, cam = list(map(int, input().split()))
+#     if tao > max_tao:
+#         max_tao = tao
+#         max_cam = cam
+#         index = i
+#     elif tao == max_tao and cam > max_cam:
+#         max_cam = cam
+#         index = i
+# index += 1
+# print(index)
+
+
 n = int(input())
-max_tao = 0
-max_cam = 0
-index = -1
+h = list(map(int, input().split()))
+
+count = 0
+
 for i in range(n):
-    tao, cam = list(map(int, input().split()))
-    if tao > max_tao:
-        max_tao = tao
-        max_cam = cam
-        index = i
-    elif tao == max_tao and cam > max_cam:
-        max_cam = cam
-        index = i
-index += 1
-print(index)
+    fact = True
+    if h[i] == 0:
+        count += 1        
+        if count > 3:
+            print("NO")
+            fact = False
+            break
+    else:
+        count = 0
+if fact:
+    print("YES")

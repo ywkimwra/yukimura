@@ -2,6 +2,6 @@ word = input()
 
 for i in range(len(word)):
     if i == 0:
-        word = word.replace(word, word.upper())
+        word[i] = word[i].replace(word[i], word.upper())
 
 print(word)
