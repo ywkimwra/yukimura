@@ -1,7 +1,6 @@
-word = input()
+word = input()     
 
-for i in range(len(word)):
-    if i == 0:
-        word[i] = word[i].replace(word[i], word.upper())
+a = word[1:]
+b = word[0].upper()
 
-print(word)
+print(f"{b}{a}")
