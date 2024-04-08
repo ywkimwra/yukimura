@@ -88,13 +88,36 @@
 
 # print(f"{c} {d}")
 
-n = int(input())
-def count_degit(n):
-    count = 0
-    while n > 0:
-        n = n // 10
-        count += 1
-    print(count)
-    return
+# n = int(input())
+# def count_degit(n):
+#     count = 0
+#     while n > 0:
+#         n = n // 10
+#         count += 1
+#     print(count)
+#     return
 
-count_degit(n)
+# count_degit(n)
+
+# n = int(input())
+
+# def abc(x):
+#     if x > 1:
+#         result = x * abc(x - 1)
+#     elif x == 1:
+#         result = 1
+#     return result
+
+# print(abc(n))
+
+n = int(input())
+
+def fibonacci(x):
+    if x <= 1:
+        return 0
+    elif x == 2 or x == 3:
+        return 1
+    else:
+        return (fibonacci(x - 1) + fibonacci(x - 2))
+        
+print(fibonacci(n))
