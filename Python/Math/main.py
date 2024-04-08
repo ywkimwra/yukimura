@@ -89,7 +89,7 @@
 # print(f"{c} {d}")
 
 # n = int(input())
-# def count_degit(n):
+# def count_digit(n):
 #     count = 0
 #     while n > 0:
 #         n = n // 10
@@ -97,7 +97,7 @@
 #     print(count)
 #     return
 
-# count_degit(n)
+# count_digit(n)
 
 # n = int(input())
 
