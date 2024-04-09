@@ -36,5 +36,3 @@ def fib_memoization(n, cache):
     elif n not in cache:
         cache[n] = fib_memoization(n-1, cache) + fib_memoization(n-2, cache)
     return cache[n]
-
-print(fib_memoization(n, cache))
