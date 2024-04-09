@@ -1,4 +1,4 @@
-#BT1 sum rows
+# BT1 sum rows
 
 # nrows, ncols = map(int, input().split())
 # a = []
@@ -30,7 +30,7 @@
 #             all_negative = False
 #             break
 #     if all_negative:
-#         print(j + 1)
+#         print(j)
 
 #BT3 check prime number on the fence of 2d array
 
@@ -129,10 +129,68 @@
 #     result = 0
 
 # print(result)
-n = 3
+
+# nrows, ncols = map(int, input().split())
+# a = []
+# evens = []
+# count = 0
+# for i in range(nrows):
+#     temp = list(map(int, input().split()))
+#     a.append(temp)
+
+# for i in range(nrows):
+#     count = 0
+#     for j in range(ncols):
+#         if a[i][j] % 2 == 0:
+#             count += 1
+#     evens.append(count)
+
+# max_index = 0
+# for i in range(len(evens)):
+#     if evens[i] > evens[max_index]:
+#         max_index = i
+# print(max_index)
+
+# nrows, ncols = map(int, input().split())
+# a = []
+
+# for i in range(nrows):
+#     temp = list(map(int, input().split()))
+#     a.append(temp)
+
+# count = 0
+
+# for i in range(nrows):
+#     for j in range(ncols):
+#         if a[i][j] > 100:
+#             count += 1
+
+# print(count)
+
+nrows, ncols = map(int, input().split())
 a = []
-for i in range(n):
-    for j in range(n - i):
-        temp = list(int(input()))
-        a.append(temp)
-print(a)
+count = 0
+
+for i in range(nrows):
+    temp = list(map(int, input().split()))
+    a.append(temp)
+
+for i in range(nrows):
+    for j in range(ncols):
+        value = a[i][j]
+        is_saddle = True
+
+        for x in range(ncols):
+            if value < a[i][x]:
+                is_saddle = False
+                break
+        
+        if is_saddle:
+            for y in range(nrows):
+                if value > a[y][j]:
+                    is_saddle = False
+                    break
+        if is_saddle:
+            count += 1
+
+print(count)

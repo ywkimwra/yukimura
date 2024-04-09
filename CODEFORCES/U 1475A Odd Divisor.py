@@ -14,4 +14,3 @@ for i in test_cases:
         if i // odd < 1:
             print("NO")
         elif i // odd >= 1:
-            
