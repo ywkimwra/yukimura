@@ -1,27 +1,20 @@
-n = int(input())
-count_1 = 0
-count_0 = 0
-flag = True
+n = input()
+zero_counter = 0
+one_counter = 0
 
-for i in range(len(str(n))):
-    if i == 1:
-        count_1 += 1
-        if count_1 > 7:
-            print("YES")
-            flag = False
+for i in n:
+    if i == "1":
+        one_counter += 1
+        zero_counter = 0
+        if one_counter >= 7:
             break
     else:
-        count_1 = 0
-
-for j in range(len(str(n))):
-    if j == 0:
-        count_0 += 1
-        if count_0 > 7:
-            print("YES")
-            flag = False
+        zero_counter += 1
+        one_counter = 0
+        if zero_counter >= 7:
             break
-    else:
-        count_0 = 0
 
-if flag:
+if zero_counter >= 7 or one_counter >= 7:
+    print("YES")
+else:
     print("NO")
