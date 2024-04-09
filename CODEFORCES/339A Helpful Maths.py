@@ -6,5 +6,4 @@ for i in range(len(a)):
         b.append(a[i])
     else:
         continue
-    count += 1
 print(b)
