@@ -15,4 +15,3 @@ for i in commands:
         result -= 1
     
 print(result)
-
