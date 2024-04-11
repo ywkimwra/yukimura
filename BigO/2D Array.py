@@ -167,30 +167,130 @@
 
 # print(count)
 
-nrows, ncols = map(int, input().split())
-a = []
+# nrows, ncols = map(int, input().split())
+# a = []
+# count = 0
+
+# for i in range(nrows):
+#     temp = list(map(int, input().split()))
+#     a.append(temp)
+
+# for i in range(nrows):
+#     for j in range(ncols):
+#         value = a[i][j]
+#         is_saddle = True
+
+#         for x in range(ncols):
+#             if value < a[i][x]:
+#                 is_saddle = False
+#                 break
+        
+#         if is_saddle:
+#             for y in range(nrows):
+#                 if value > a[y][j]:
+#                     is_saddle = False
+#                     break
+#         if is_saddle:
+#             count += 1
+
+# print(count)
+
+# nrows, ncols = map(int, input().split())
+# a, b, p = map(int, input().split())
+# matrix = []
+
+# for i in range(nrows * ncols):
+#     if i == 0:
+#         matrix.append(a)
+#     elif i == 1: 
+#         matrix.append(b)
+#     else:
+#         c = (a + b) % p
+#         a = b
+#         b = c
+#         matrix.append(b)
+
+# for i in range(nrows):
+#     for j in range(ncols):
+#         index = i * ncols + j
+#         print(matrix[index], end=" ")
+#     print()
+
+# n = int(input())
+# matrix = []
+# max_value = 0
+# is_queen = True
+
+# for i in range(n):
+#     temp = list(map(int, input().split()))
+#     matrix.append(temp)
+
+# for i in range(n):
+#     for j in range(n):
+#         if matrix[i][j] > max_value:
+#             max_value = matrix[i][j]
+
+# M, N = map(int, input().split())  # Nhập số dòng và số cột của ma trận
+# a, b, p = map(int, input().split())  # Nhập giá trị đầu tiên a, b và số p
+
+# matrix = [[0 for _ in range(N)] for _ in range(M)]  # Khởi tạo ma trận với giá trị ban đầu là 0
+
+# # Gán giá trị cho 2 ô đầu tiên
+# matrix[0][0] = a
+# matrix[0][1] = b
+
+# # Tính toán và gán giá trị cho từng ô trong ma trận
+# for i in range(M):
+#     for j in range(N):
+#         if i == 0 and (j == 0 or j == 1):
+#             continue  # Bỏ qua 2 ô đầu tiên đã được gán giá trị trước đó
+#         if j < 2:
+#             matrix[i][j] = (matrix[i-1][j] + matrix[i][j-1]) % p
+#         else:
+#             matrix[i][j] = (matrix[i-1][j] + matrix[i][j-1] - matrix[i-1][j-2]) % p
+
+# # In ma trận
+# for row in matrix:
+#     print(" ".join(str(x) for x in row))
+
+n = int(input())
+matrix = []
 count = 0
 
-for i in range(nrows):
+for i in range(n):
     temp = list(map(int, input().split()))
-    a.append(temp)
+    matrix.append(temp)
 
-for i in range(nrows):
-    for j in range(ncols):
-        value = a[i][j]
-        is_saddle = True
+for i in range(n):
+    for j in range(n):
+        value = matrix[i][j]
+        is_queen = True
 
-        for x in range(ncols):
-            if value < a[i][x]:
-                is_saddle = False
+        for x in range(n):
+            if value < matrix[i][x]:
+                is_queen = False
                 break
         
-        if is_saddle:
-            for y in range(nrows):
-                if value > a[y][j]:
-                    is_saddle = False
+        if is_queen:
+            for y in range(n):
+                if value < matrix[y][j]:
+                    is_queen = False
                     break
-        if is_saddle:
+
+        if is_queen:
+            for x in range(n):
+                y = x - j + i
+                if (y != i or x != j) and (0 <= y <= (n-1)):
+                    if value < matrix[y][x]:
+                        is_queen = False
+                        break
+                y = j - x + i
+                if (y != i or x != j) and (0 <= y <= (n-1)):
+                    if value < matrix[y][x]:
+                        is_queen = False
+                        break
+
+        if is_queen:
             count += 1
 
 print(count)
