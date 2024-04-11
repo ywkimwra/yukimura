@@ -167,30 +167,67 @@
 
 # print(count)
 
-nrows, ncols = map(int, input().split())
-a = []
+# nrows, ncols = map(int, input().split())
+# a = []
+# count = 0
+
+# for i in range(nrows):
+#     temp = list(map(int, input().split()))
+#     a.append(temp)
+
+# for i in range(nrows):
+#     for j in range(ncols):
+#         value = a[i][j]
+#         is_saddle = True
+
+#         for x in range(ncols):
+#             if value < a[i][x]:
+#                 is_saddle = False
+#                 break
+        
+#         if is_saddle:
+#             for y in range(nrows):
+#                 if value > a[y][j]:
+#                     is_saddle = False
+#                     break
+#         if is_saddle:
+#             count += 1
+
+# print(count)
+
+n = int(input())
+matrix = []
 count = 0
 
-for i in range(nrows):
+for i in range(n):
     temp = list(map(int, input().split()))
-    a.append(temp)
+    matrix.append(temp)
 
-for i in range(nrows):
-    for j in range(ncols):
-        value = a[i][j]
-        is_saddle = True
+for i in range(n):
+    for j in range(n):
+        value = matrix[i][j]
+        is_queen = True
 
-        for x in range(ncols):
-            if value < a[i][x]:
-                is_saddle = False
+        for x in range(n):
+            if value < matrix[i][x]:
+                is_queen = False
                 break
         
-        if is_saddle:
-            for y in range(nrows):
-                if value > a[y][j]:
-                    is_saddle = False
+        if is_queen:
+            for y in range(n):
+                if value < matrix[y][j]:
+                    is_queen = False
                     break
-        if is_saddle:
+
+        if is_queen:
+            for m in range(n):
+                for k in range(n):
+                    if (m != i or k != j) and (abs(m - i) == abs(k - j)):
+                        if value < matrix[m][k]:
+                            is_queen = False
+                            break
+        
+        if is_queen:
             count += 1
 
 print(count)
