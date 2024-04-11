@@ -45,6 +45,80 @@
 
 #BT4
 
-n = input()
+# n = int(input())
+# names = []
 
-print(n.title())
+# for i in range(n):
+#     name = input()
+#     names.append(name)
+
+# for name in names:
+#     remodeled_string = ""
+#     capitalize_next = True
+
+#     for char in name:
+#         if char.isalpha():
+#             if capitalize_next:
+#                 remodeled_string += char.upper()
+#                 capitalize_next = False
+#             else:
+#                 remodeled_string += char.lower()
+#         elif char.isspace():
+#             capitalize_next = True
+#             remodeled_string += char
+
+#     print(remodeled_string)
+
+#BT8
+
+# string = input().split()
+
+# for i in range(len(string), 0, -1):
+#     print(string[i-1], end=" ")
+
+#BT7
+
+# string = input()
+# capitalize_next = False
+# res = ""
+
+# for i in range(len(string)):
+#     if capitalize_next and string[i].isalpha():
+#         res += string[i].upper()
+#         capitalize_next = False
+#     else:
+#         res += string[i]
+#         if string[i:i+2] == ". ":
+#             capitalize_next = True
+
+# print(res)
+
+#BT6
+
+# string = input()
+# alpha = []
+
+# for i in string:
+#     while i not in alpha and i != " ":
+#         alpha.append(i)
+#         string = string[1:]
+
+# print(alpha)
+# print(len(alpha))
+
+#BT 5
+
+n = int(input())
+strings = []
+for i in range(n):
+    string = input().upper()
+    strings.append(string)
+
+for string in strings:
+    for i in string:
+        char_count = {}
+        if i not in char_count:
+            char_count[i] = 0
+        char_count[i] += 1
+
+print(char_count)

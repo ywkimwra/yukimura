@@ -281,7 +281,6 @@ for i in range(n):
                     break
 
         if is_queen:
-<<<<<<< HEAD
             for x in range(n):
                 y = x - j + i
                 if (y != i or x != j) and (0 <= y <= (n-1)):
@@ -294,15 +293,6 @@ for i in range(n):
                         is_queen = False
                         break
 
-=======
-            for m in range(n):
-                for k in range(n):
-                    if (m != i or k != j) and (abs(m - i) == abs(k - j)):
-                        if value < matrix[m][k]:
-                            is_queen = False
-                            break
-        
->>>>>>> 24a0cd86e3956ca25222a3536f79aa4544df9de1
         if is_queen:
             count += 1
 
