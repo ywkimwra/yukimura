@@ -195,6 +195,7 @@
 
 # print(count)
 
+<<<<<<< HEAD
 # nrows, ncols = map(int, input().split())
 # a, b, p = map(int, input().split())
 # matrix = []
@@ -253,6 +254,8 @@
 # for row in matrix:
 #     print(" ".join(str(x) for x in row))
 
+=======
+>>>>>>> 24a0cd86e3956ca25222a3536f79aa4544df9de1
 n = int(input())
 matrix = []
 count = 0
@@ -278,6 +281,7 @@ for i in range(n):
                     break
 
         if is_queen:
+<<<<<<< HEAD
             for x in range(n):
                 y = x - j + i
                 if (y != i or x != j) and (0 <= y <= (n-1)):
@@ -290,6 +294,15 @@ for i in range(n):
                         is_queen = False
                         break
 
+=======
+            for m in range(n):
+                for k in range(n):
+                    if (m != i or k != j) and (abs(m - i) == abs(k - j)):
+                        if value < matrix[m][k]:
+                            is_queen = False
+                            break
+        
+>>>>>>> 24a0cd86e3956ca25222a3536f79aa4544df9de1
         if is_queen:
             count += 1
 
