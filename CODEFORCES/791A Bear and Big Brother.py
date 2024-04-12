@@ -8,4 +8,3 @@ while a <= b:
     year_counter += 1
 
 print(year_counter)
-
