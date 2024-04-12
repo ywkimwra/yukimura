@@ -108,17 +108,49 @@
 
 #BT 5
 
-n = int(input())
+# n = int(input())
+# strings = []
+# for i in range(n):
+#     string = input().upper()
+#     strings.append(string)
+
+# for string in strings:
+#     for i in string:
+#         char_count = {}
+#         if i not in char_count:
+#             char_count[i] = 0
+#         char_count[i] += 1
+
+# print(char_count)
+
+def find_least_common_character(strings):
+    character_count = {}
+    for string in strings:
+        for char in string:
+            char = char.upper()  # Chuyển đổi ký tự thành chữ hoa để không phân biệt chữ hoa và chữ thường
+            if char.isalpha():  # Chỉ xem xét các ký tự từ 'A' đến 'Z'
+                if char in character_count:
+                    character_count[char] += 1
+                else:
+                    character_count[char] = 1
+
+    least_common_char = min(character_count, key=character_count.get)
+    return least_common_char
+
 strings = []
-for i in range(n):
-    string = input().upper()
+# Đọc số lượng chuỗi N
+N = int(input())
+for i in range(N):
+    string = input()
     strings.append(string)
 
-for string in strings:
-    for i in string:
-        char_count = {}
-        if i not in char_count:
-            char_count[i] = 0
-        char_count[i] += 1
+# Đọc N chuỗi
+for _ in range(N):
+    string = input()
+    strings.append(string)
 
-print(char_count)
+# Tìm ký tự xuất hiện ít nhất trong các chuỗi
+result = find_least_common_character(strings)
+
+# In kết quả
+print(result)
