@@ -1,33 +1,12 @@
 #https://codeforces.com/problemset/problem/1475/A
 
-import math
-
-def is_prime(n):
-    if n <= 1:
-        a = False
-    elif n >= 2:
-        a = True
-        for i in range(2, round(math.sqrt(n)) + 1):
-            if n % i == 0:
-                a = False
-                break
-    return a
-
-def next_prime(n):
-    result = n + 1
-    while True:
-        if is_prime(result):
-            break
-        else:
-            result += 1
-    return result
-
 t = int(input())
 test_cases = []
-odd = 3
 
 for i in range(t):
     temp = int(input())
+    while temp % 2 == 0 and temp > 2:
+        temp //= 2
     test_cases.append(temp)
 
 for i in test_cases:
@@ -35,12 +14,14 @@ for i in test_cases:
         print("YES")
     else:
         flag = False
-        while odd * odd <= i:
+        odd = 3
+        while i >= odd:
             if i % odd == 0:
                 flag = True
                 break
             else:
-                odd = next_prime(odd)
+                odd += 2
+
         if flag:
             print("YES")
         else:
