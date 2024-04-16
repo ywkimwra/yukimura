@@ -13,7 +13,7 @@ def is_valid_email(email):
         return "INVALID"
     
     # rule 4
-    if domain.count(".") < 0:
+    if domain.count(".") < 1:
         return "INVALID"
     
     # rule 5

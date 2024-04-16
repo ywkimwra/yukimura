@@ -1,12 +1,17 @@
-n, k = map(int, input().split())
-num = []
+def print_odd(n: int) -> int:
+    return 2 * n - 1
 
-for i in range(n):
-    if (i + 1) % 2 == 1:
-        num.append(i + 1)
+def print_even(n: int) -> int:
+    return 2 * n
 
-for i in range(n):
-    if (i + 1) % 2 == 0:
-        num.append(i + 1)
+def main():
+    n, k = map(int, input().split())
 
-print(num[k-1])
+    if k <= (n // 2 + n % 2):
+        print(print_odd(k))
+    else:
+        j = k - (n // 2) - (n % 2)
+        print(print_even(j))
+
+if __name__ == "__main__":
+    main()
