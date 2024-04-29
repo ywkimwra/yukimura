@@ -75,13 +75,13 @@
 
 # a, b = map(int, input().split())
 
-# def gcd(a, b):
-#     r = a % b
-#     while r != 0:
-#         a = b
-#         b = r
-#         r = a % b
-#     return b
+def gcd(a, b):
+    r = a % b
+    while r != 0:
+        a = b
+        b = r
+        r = a % b
+    return b
 
 # c = a / gcd(a, b)
 # d = b / gcd(a, b)

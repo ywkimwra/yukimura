@@ -1,7 +1,7 @@
 class Fraction:
-    # def __init__(self, a = 0, b = 1):
-    #     self.num = a
-    #     self.denom = b
+    def __init__(self, a = 0, b = 1):
+        self.num = a
+        self.denom = b
     
     def set(self, a, b):
         self.num = a
@@ -35,18 +35,12 @@ class Fraction:
         s = f"{self.num} {self.denom}"
         return s
 
-# x, y = map(int, input().split())
-# p1 = Fraction(x, y)
+x, y = map(int, input().split())
+p1 = Fraction(x, y)
 
-# x, y = map(int, input().split())
-# p2 = Fraction(x, y)
+x, y = map(int, input().split())
+p2 = Fraction(x, y)
 
-# p3 = p1.sum_fraction(p2)
+p3 = p1.sum_fraction(p2)
 
-p4 = Fraction()
-
-# print(p3)
-
-p4.set(3, 4)
-
-print(p4)
+print(p3)
