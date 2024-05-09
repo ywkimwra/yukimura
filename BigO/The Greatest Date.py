@@ -32,5 +32,3 @@ for i in range(1, len(dates)):
         greatest_date = dates[i]
 
 print(greatest_date)
-
-print(greatest_date)
