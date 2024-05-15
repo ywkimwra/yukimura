@@ -38,8 +38,8 @@ def find_first_repeating_character(string):
 
     return None
 
-string = input()
 
+string = input()
 result = find_first_repeating_character(string)
 
 print(result if result is not None else "null")
