@@ -3,13 +3,6 @@ class Edge:
         self.u = u
         self.v = v
 
-    def __lt__(self, other):
-        if self.u < other.u:
-            return True
-        elif self.u == other.u and self.v < other.v:
-            return True
-        return False
-
     def __str__(self):
         s = f"{self.u} {self.v}"
         return s
@@ -30,7 +23,6 @@ def read_graph():
             if adjacency_matrix[i][j] == 1:
                 edges.append(Edge(i, j))
 
-    edges.sort()
     return N, edges
 
 
@@ -40,4 +32,6 @@ def main():
     for edge in edges:
         print(edge)
 
-main()
+
+if __name__ == "__main__":
+    main()
